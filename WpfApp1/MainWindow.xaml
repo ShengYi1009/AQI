@@ -7,6 +7,30 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="500*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250*" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="600*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" Background="AliceBlue" Height="80">
+            <Label Content="空氣品質監測資料網址" HorizontalAlignment="Left" Margin="50,20,0,20" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="16"/>
+            <TextBox x:Name="UrlTextBox" VerticalContentAlignment="Center" Margin="20,10,50,10" Width="800" Height="30" Text="AQI資料網址" FontSize="16"/>
+            <Button x:Name="GetAqiButton" VerticalAlignment="Center" Width="100" Height="30" Content="取得AQI資料" FontSize="16" />
+        </StackPanel>
+        <TextBox x:Name="ContentTextBox" Grid.Row="1" Grid.Column="0" Background="Beige" FontSize="14" Margin="3"/>
+        <GridSplitter Grid.Row="1" Grid.Column="1" Background="LightSlateGray" Cursor="SizeWE" Width="5" Height="Auto" HorizontalAlignment="Stretch"/>
+        <Grid Grid.Row="1" Grid.Column="2" Background="#FFF5E9E5">
 
+        </Grid>
+        <StatusBar Grid.Row="2" Grid.ColumnSpan="3" Background="LightGray">
+            <StatusBarItem>
+                <TextBlock x:Name="StatusBarText" Text="Ready" Margin="50,0,0,0"/>
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
 </Window>
